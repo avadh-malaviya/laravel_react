@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function Example() {
+function Test() {
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -15,6 +16,25 @@ function Example() {
             </div>
         </div>
     );
+}
+
+function Child() {
+    return (
+        <div className="container">
+            Child
+        </div>
+    );
+}
+
+function Example() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element = {<Test/>}/>
+                <Route path="/child" element = {<Child/>}/>
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default Example;
